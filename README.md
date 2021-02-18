@@ -1,11 +1,4 @@
-# Introduction to Distributed Systems - Assignment Template
-
-## General Information
-
-The following template is structured as a multi-project build using gradle as a build tool.
-By the way, gradle is the only tool supporting multi-project builds.
-The main project _idistrsys_ specifies all included subprojects in the _settings.gradle_ file.
-_client_ and _server_ are dependent on the _shared_ project since all the model classes are included in this project.
+# UDP Sockets and Google RPC
 
 ## How to get the server and client running?
 
