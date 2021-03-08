@@ -26,15 +26,9 @@ import de.uniba.rz.entities.Type;
 //Client side implementation for UDP
 public class UDPTicketManagementBackend implements TicketManagementBackend {
 
-	// IP Address of the server to which the client tries to connect
-	String ipAddress;
-
-	// Port of the server to which the client tries to connect
-	Integer port;
-
-	// Atomic integer increments in atomic or thread safe manner, wont fail during
-	// concurrent increments
-	AtomicInteger id = new AtomicInteger();
+	String ipAddress; // IP Address of the server to which the client tries to connect
+	Integer port; // Port of the server to which the client tries to connect
+	AtomicInteger id = new AtomicInteger(); // Atomic integer increments in atomic or thread safe manner, won't fail during concurrent increments
 
 	public UDPTicketManagementBackend(String ipAddress, Integer port) {
 
@@ -53,16 +47,14 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 		try (DatagramSocket sock = new DatagramSocket(null)) {
 
 			// Create address of the recipient
-			SocketAddress serverAddress = new InetSocketAddress(ipAddress, port); // creating socket address with ip
-																					// address and port of server
+			SocketAddress serverAddress = new InetSocketAddress(ipAddress, port); // creating socket address with IP address and port of the server																			// address and port of server
 
 			// Connect to the server
 			sock.connect(serverAddress);
 
 			// Create packet
-			// Data is always sent as bytes or byte arrays across the network
-			// Since complex objects cannot be directly converted to byte array, they have
-			// to be serialized first.
+			// Data is always sent as bytes or byte arrays across the network. 
+			// Since complex objects cannot be directly converted to byte array, they have to be serialized first.
 			ObjectOutput oo = new ObjectOutputStream(bStream);
 			ByteArrayOutputStream bStream = new ByteArrayOutputStream();
 			oo.writeObject(message);
