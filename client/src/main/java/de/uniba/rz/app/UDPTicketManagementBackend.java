@@ -109,11 +109,8 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to create new ticket
-
-	public Ticket createNewTicket(String reporter, String topic, String description, Type type, Priority priority)
-			throws TicketException {
+	public Ticket createNewTicket(String reporter, String topic, String description, Type type, Priority priority) throws TicketException {
 
 		Ticket ticket = new Ticket(id.getAndIncrement(), reporter, topic, description, type, priority);
 		Message Message = new Message(ticket, null, Constants.STORE_TICKET);
@@ -124,9 +121,7 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to get all tickets
-
 	public List<Ticket> getAllTickets() throws TicketException {
 
 		List<Ticket> tickets = new ArrayList<>();
@@ -139,9 +134,7 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to get tickets by id
-
 	public Ticket getTicketById(int id) throws TicketException {
 
 		List<Ticket> tickets = getAllTickets();
@@ -158,9 +151,7 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to accept the ticket created
-
 	public Ticket acceptTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
@@ -181,9 +172,7 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to reject the ticket created
-
 	public Ticket rejectTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
@@ -204,9 +193,7 @@ public class UDPTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to close accepted tickets
-
 	public Ticket closeTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
