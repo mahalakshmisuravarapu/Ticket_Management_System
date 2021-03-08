@@ -41,8 +41,7 @@ public class GRPCRemoteAccess implements RemoteAccess {
 
 			if (request != null) {
 
-				// For each message, new thread for message handler is created for parallel
-				// processing
+				// For each message, new thread for message handler is created for parallel processing
 				new Thread(new GRPCMessageHandler(request, ticketStore, responseObserver)).start();
 
 			}
