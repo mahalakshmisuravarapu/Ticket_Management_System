@@ -30,8 +30,7 @@ public class GRPCMessageHandler extends Constants implements Runnable {
 	@Override
 	public void run() {
 
-		// As mentioned in client side, MessageTransferObject has to be converted back
-		// as Message Object
+		// As mentioned in client side, MessageTransferObject has to be converted back as Message Object
 		Message message = MessageConverter.convertToMessage(messageTransferObject);
 		String operation = message.getOperation();
 
