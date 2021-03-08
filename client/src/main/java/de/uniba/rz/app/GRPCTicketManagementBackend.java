@@ -20,8 +20,7 @@ import io.grpc.ManagedChannelBuilder;
 
 public class GRPCTicketManagementBackend implements TicketManagementBackend {
 
-	// A channel is first created through which messages are sent and connection is
-	// maintained
+	// A channel is first created through which messages are sent and connection is maintained
 	private ManagedChannel channel;
 
 	// sync stub stands for synchronized stub or blocking stub
@@ -53,8 +52,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	 */
 	public Message sendMessage(Message message) {
 
-		// Converting Message object of this program to Message object of gRPC i.e.
-		// MessageTransferObject
+		// Converting Message object of this program to Message object of gRPC i.e. MessageTransferObject
 		MessageTransferObject request = MessageConverter.convertToMessageTransferObject(message);
 
 		// Message is sent and awaits for response
@@ -108,9 +106,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to get all tickets
-
 	public List<Ticket> getAllTickets() throws TicketException {
 
 		List<Ticket> tickets = new ArrayList<>();
@@ -123,9 +119,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to get tickets by id
-
 	public Ticket getTicketById(int id) throws TicketException {
 
 		List<Ticket> tickets = getAllTickets();
@@ -142,9 +136,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to accept the ticket created
-
 	public Ticket acceptTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
@@ -164,9 +156,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to reject the ticket created
-
 	public Ticket rejectTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
@@ -186,9 +176,7 @@ public class GRPCTicketManagementBackend implements TicketManagementBackend {
 	}
 
 	@Override
-
 	// Method to close accepted tickets
-
 	public Ticket closeTicket(int id) throws TicketException {
 
 		Ticket ticketToModify = getTicketById(id);
