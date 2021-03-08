@@ -59,8 +59,7 @@ public class UDPRemoteAccess implements RemoteAccess {
 							serverSocket.receive(packet);
 							System.out.println("\t [SERVER]: Received Packet. " + "Creating new Thread to handle it.");
 
-							// For each message, a new thread of message handler is started, so that each
-							// message can be processed in parallel
+							// For each message, a new thread of message handler is started, so that each message can be processed in parallel
 							new Thread(new UDPMessageHandler(packet, serverSocket, ticketStore)).start();
 
 						} catch (SocketTimeoutException e) {
