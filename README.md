@@ -1,4 +1,4 @@
-# UDP Sockets and Google RPC
+# Ticket Management System
 
 ## How to get the server and client running?
 
