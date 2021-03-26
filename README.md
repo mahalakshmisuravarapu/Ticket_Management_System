@@ -1,4 +1,5 @@
 # Ticket Management System
+The implemented system uses UDP (User Datagram Protocol) Sockets and gRPC (gRPC Remote Procedure Calls) for message passing and ticket management.
 
 ## How to get the server and client running?
 
